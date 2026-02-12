@@ -1,0 +1,14 @@
+name: CI - Build and deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+jobs:
+  Build:
+    uses:   azure-prep/roboshop-github-actions/.github/workflows/ci-dev.yml@main
+    with:
+      appType: 'angularjs'
+      appName: 'frontend'
+    secrets:
+      vault_token: ${{ secrets.TOKEN }}

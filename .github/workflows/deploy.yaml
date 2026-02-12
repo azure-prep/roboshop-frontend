@@ -1,0 +1,12 @@
+name: CI - Deploy
+on:
+  workflow_dispatch:
+jobs:
+  Dev_Deploy:
+    uses: azure-prep/roboshop-github-actions/.github/workflows/aks-deploy.yaml@main
+    with:
+      resource_group_name: 'ukwest-dev'
+      appEnv: 'dev-dev'
+      appName: 'frontend'
+    secrets:
+      vault_token: ${{ secrets.TOKEN }}
