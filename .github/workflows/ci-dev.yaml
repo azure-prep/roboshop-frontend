@@ -8,7 +8,7 @@ jobs:
   Build:
     uses:   azure-prep/roboshop-github-actions/.github/workflows/ci-dev.yml@main
     with:
-      appType: 'angularjs'
+      appType:  'angularjs'
       appName: 'frontend'
     secrets:
       vault_token: ${{ secrets.TOKEN }}
